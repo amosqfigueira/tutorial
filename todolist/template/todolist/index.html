@@ -492,10 +492,15 @@
           <div class="col-md-3 mb-5">
             <h3>Quick Links</h3>
             <ul class="list-unstyled footer-link">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Terms of Use</a></li>
-              <li><a href="#">Disclaimers</a></li>
-              <li><a href="#">Contact</a></li>
+              {% for produto in todo_items %}
+                  {% if produto.completed %}
+               <li>{{produto.text}} </li>
+                  {% else  %}
+                <li><a href="#{{produto.text}}">{{produto.text}} </a></li>
+                  {% endif %}
+              {% endfor %}
+
+
             </ul>
           </div>
           <div class="col-md-3">
